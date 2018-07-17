@@ -15,7 +15,7 @@ var helmet = require('helmet');
 var mongoose = require('mongoose');
 //Set up default mongoose connection
 // var mongoDB = 'mongodb://chetan:chtnptl@ds117070.mlab.com:17070/local_library';
-mongoose.connect('mongodb://chetan:chtnptl@ds117070.mlab.com:17070/local_library', { useNewUrlParser: true })
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://chetan:chtnptl@ds117070.mlab.com:17070/local_library', { useNewUrlParser: true })
 // Get Mongoose to use the global promise library
 mongoose.Promise = global.Promise;
 //Get the default connection
